@@ -1,0 +1,26 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "generate",
+    srcs = [
+        "base_rule.go",
+        "js_library_rule.go",
+        "js_test_rule.go",
+        "rules.go",
+        "ts_project_rule.go",
+    ],
+    importpath = "github.com/kartones/bazel-gazelle-sample-web-extension/gazelle/generate",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//gazelle/config",
+        "//gazelle/constants",
+        "//gazelle/file",
+        "//gazelle/parse",
+        "//gazelle/utils",
+        "@bazel_gazelle//config:go_default_library",
+        "@bazel_gazelle//label:go_default_library",
+        "@bazel_gazelle//merger:go_default_library",
+        "@bazel_gazelle//rule:go_default_library",
+        "@com_github_bazelbuild_buildtools//build",
+    ],
+)

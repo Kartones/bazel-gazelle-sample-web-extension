@@ -1,0 +1,45 @@
+load("//rules/js:defs.bzl", "js_library", "js_test")
+
+js_library(
+    name = "1",
+    srcs = ["1.js"],
+)
+
+js_library(
+    name = "2",
+    srcs = ["2.jsx"],
+)
+
+js_library(
+    name = "3",
+    srcs = ["3.mjs"],
+)
+
+js_library(
+    name = "4",
+    srcs = ["4.cjs"],
+)
+
+js_test(
+    name = "test_1",
+    size = "small",
+    entry_point = "1.test.js",
+)
+
+js_test(
+    name = "test_2",
+    size = "small",
+    entry_point = "2.test.jsx",
+)
+
+js_test(
+    name = "test_3",
+    size = "small",
+    entry_point = "3.test.mjs",
+)
+
+js_test(
+    name = "test_4",
+    size = "small",
+    entry_point = "4.test.cjs",
+)

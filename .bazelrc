@@ -1,0 +1,6 @@
+common --noenable_bzlmod
+common --lockfile_mode=off
+
+test --test_output=errors
+test --verbose_failures
+test --test_verbose_timeout_warnings

@@ -1,0 +1,23 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "parse",
+    srcs = [
+        "parse.go",
+    ],
+    importpath = "github.com/kartones/bazel-gazelle-sample-web-extension/gazelle/parse",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//gazelle/constants",
+        "//gazelle/utils",
+    ],
+)
+
+go_test(
+    name = "parse_test",
+    size = "small",
+    srcs = [
+        "parse_test.go",
+    ],
+    embed = [":parse"],
+)
