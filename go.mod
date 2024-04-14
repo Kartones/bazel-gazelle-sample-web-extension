@@ -6,7 +6,7 @@ toolchain go1.22.1
 
 require (
 	github.com/bazelbuild/bazel-gazelle v0.36.0
-	github.com/bazelbuild/buildtools v0.0.0-20240412153002-c7c6e84e71a1
+	github.com/bazelbuild/buildtools/v7 v7.1.0
 )
 
 require (
