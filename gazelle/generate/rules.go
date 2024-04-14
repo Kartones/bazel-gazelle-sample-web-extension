@@ -5,6 +5,13 @@ import (
 	extensionConfig "github.com/kartones/bazel-gazelle-sample-web-extension/gazelle/config"
 )
 
+// TODO: process TS tests
+var ENABLED_RULES = []func(RuleArgs, *extensionConfig.WebConfig) ([]*extensionConfig.Imports, []*rule.Rule){
+	MakeJSLibraryRules,
+	MakeJSTestRules,
+	MakeTSProjectRules,
+}
+
 type IdentifiedSources struct {
 	Javascript      []string
 	Typescript      []string

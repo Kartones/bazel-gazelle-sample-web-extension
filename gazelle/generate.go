@@ -69,17 +69,11 @@ func (lang *Web) GenerateRules(args language.GenerateArgs) language.GenerateResu
 
 	processRegularFiles(args, webConfig, &identifiedSources, &identifiedImports)
 
-	// TODO: process TS tests
-	ruleImports, rules = generate.GenerateAllRules(
-		[]func(generate.RuleArgs, *extensionConfig.WebConfig) ([]*extensionConfig.Imports, []*rule.Rule){
-			generate.MakeJSLibraryRules,
-			generate.MakeJSTestRules,
-			generate.MakeTSProjectRules,
-		}, generate.RuleArgs{
-			Sources: identifiedSources,
-			Imports: identifiedImports,
-			Rel:     args.Rel,
-		}, webConfig)
+	ruleImports, rules = generate.GenerateAllRules(generate.ENABLED_RULES, generate.RuleArgs{
+		Sources: identifiedSources,
+		Imports: identifiedImports,
+		Rel:     args.Rel,
+	}, webConfig)
 
 	for index := range rules {
 		generatedRules = append(generatedRules, rules[index])

@@ -1,0 +1,12 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "resolve",
+    srcs = [
+        "builtins.go",
+    ],
+    importpath = "github.com/kartones/bazel-gazelle-sample-web-extension/gazelle/resolve",
+    visibility = ["//visibility:public"],
+    deps = [
+    ],
+)
