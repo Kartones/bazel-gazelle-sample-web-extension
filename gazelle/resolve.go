@@ -46,7 +46,7 @@ func (lang *Web) Imports(c *config.Config, r *rule.Rule, f *rule.File) []resolve
 		return importSpecs
 	}
 	if webConfig.Verbose {
-		log.Printf("Imports()   - '%s/%s (%s)'", f.Pkg, r.Name(), r.Kind())
+		log.Printf("Imports()       : %s/%s (%s)", f.Pkg, r.Name(), r.Kind())
 	}
 
 	// TODO: Imports similar to https://github.com/benchsci/rules_nodejs_gazelle/blob/main/gazelle/resolve.go
@@ -71,7 +71,7 @@ func (lang *Web) Resolve(c *config.Config, ix *resolve.RuleIndex, rc *repo.Remot
 		return
 	}
 	if webConfig.Verbose {
-		log.Printf("Resolve()   - '%s/%s (%s)'", from.Pkg, r.Name(), r.Kind())
+		log.Printf("Resolve()       : %s/%s (%s)", from.Pkg, r.Name(), r.Kind())
 	}
 
 	// TODO: Resolve similar to https://github.com/benchsci/rules_nodejs_gazelle/blob/main/gazelle/resolve.go

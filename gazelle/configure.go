@@ -84,16 +84,15 @@ func (language *Web) Configure(config *config.Config, rel string, file *rule.Fil
 		}
 	}
 
-	if webConfig.Verbose {
-		log.Printf("Configure() - '%s'", rel)
-	}
-
 	if rel == "" && webConfig.ExtensionEnabled {
 		if webConfig.Verbose {
 			log.Println("Root Configuration initialized")
 		}
 	}
 
+	if webConfig.Verbose {
+		log.Printf("Configure()     : %s", rel)
+	}
 }
 
 func createWithRootConfig() extensionConfig.WebConfigs {
