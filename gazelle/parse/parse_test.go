@@ -33,6 +33,12 @@ func TestParseJS(t *testing.T) {
 			want: []string{},
 		},
 		{
+			desc: "import nodejs built-in",
+			name: "nodejs_builtins.js",
+			js:   `import fs from 'node:fs';`,
+			want: []string{"node:fs"},
+		},
+		{
 			desc: "import single quote",
 			name: "single.js",
 			js:   `export * from 'date-fns';`,

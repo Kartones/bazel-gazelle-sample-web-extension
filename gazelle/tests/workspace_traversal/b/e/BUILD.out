@@ -1,0 +1,6 @@
+load("//rules/js:defs.bzl", "js_library")
+
+js_library(
+    name = "file",
+    srcs = ["file.js"],
+)

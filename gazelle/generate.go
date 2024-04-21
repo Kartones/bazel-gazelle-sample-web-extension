@@ -26,6 +26,7 @@ import (
 	"github.com/kartones/bazel-gazelle-sample-web-extension/gazelle/constants"
 	"github.com/kartones/bazel-gazelle-sample-web-extension/gazelle/file"
 	"github.com/kartones/bazel-gazelle-sample-web-extension/gazelle/generate"
+	"github.com/kartones/bazel-gazelle-sample-web-extension/gazelle/parse"
 
 	"github.com/bazelbuild/bazel-gazelle/language"
 	"github.com/bazelbuild/bazel-gazelle/rule"
@@ -57,6 +58,10 @@ func (lang *Web) GenerateRules(args language.GenerateArgs) language.GenerateResu
 
 	if !webConfig.ExtensionEnabled {
 		return language.GenerateResult{}
+	}
+
+	if webConfig.Verbose {
+		log.Printf("GenerateRules() : %s", args.Rel)
 	}
 
 	var ruleImports []*extensionConfig.Imports
@@ -100,25 +105,25 @@ func processRegularFiles(args language.GenerateArgs, webConfig *extensionConfig.
 
 		if len(file.JSTestExtensionsPattern.FindStringSubmatch(baseName)) > 0 {
 			identifiedSources.JavascriptTests = append(identifiedSources.JavascriptTests, baseName)
-			identifiedImports.JavascriptTests = append(identifiedImports.JavascriptTests, *extensionConfig.ReadFileAndParse(filePath))
+			identifiedImports.JavascriptTests = append(identifiedImports.JavascriptTests, *parse.ReadFileAndParse(filePath))
 			continue
 		}
 
 		if len(file.JSExtensionsPattern.FindStringSubmatch(baseName)) > 0 {
 			identifiedSources.Javascript = append(identifiedSources.Javascript, baseName)
-			identifiedImports.Javascript = append(identifiedImports.Javascript, *extensionConfig.ReadFileAndParse(filePath))
+			identifiedImports.Javascript = append(identifiedImports.Javascript, *parse.ReadFileAndParse(filePath))
 			continue
 		}
 
 		if len(file.TSTestExtensionsPattern.FindStringSubmatch(baseName)) > 0 {
 			identifiedSources.TypescriptTests = append(identifiedSources.TypescriptTests, baseName)
-			identifiedImports.TypescriptTests = append(identifiedImports.TypescriptTests, *extensionConfig.ReadFileAndParse(filePath))
+			identifiedImports.TypescriptTests = append(identifiedImports.TypescriptTests, *parse.ReadFileAndParse(filePath))
 			continue
 		}
 
 		if len(file.TSExtensionsPattern.FindStringSubmatch(baseName)) > 0 {
 			identifiedSources.Typescript = append(identifiedSources.Typescript, baseName)
-			identifiedImports.Typescript = append(identifiedImports.Typescript, *extensionConfig.ReadFileAndParse(filePath))
+			identifiedImports.Typescript = append(identifiedImports.Typescript, *parse.ReadFileAndParse(filePath))
 			continue
 		}
 	}
