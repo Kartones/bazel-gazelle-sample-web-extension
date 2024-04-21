@@ -58,7 +58,7 @@ func (language *Web) Configure(config *config.Config, rel string, file *rule.Fil
 		webConfigs[rel] = webConfig
 	}
 
-	webConfig.Verbose = language.Verbose
+	webConfig.Verbose = webConfig.Verbose || language.Verbose
 
 	if file != nil {
 		for _, directive := range file.Directives {
@@ -84,11 +84,16 @@ func (language *Web) Configure(config *config.Config, rel string, file *rule.Fil
 		}
 	}
 
+	if webConfig.Verbose {
+		log.Printf("Configure() - '%s'", rel)
+	}
+
 	if rel == "" && webConfig.ExtensionEnabled {
 		if webConfig.Verbose {
-			log.Println("Configuration initialized")
+			log.Println("Root Configuration initialized")
 		}
 	}
+
 }
 
 func createWithRootConfig() extensionConfig.WebConfigs {

@@ -59,6 +59,10 @@ func (lang *Web) GenerateRules(args language.GenerateArgs) language.GenerateResu
 		return language.GenerateResult{}
 	}
 
+	if webConfig.Verbose {
+		log.Printf("Configure() - '%s'", args.Rel)
+	}
+
 	var ruleImports []*extensionConfig.Imports
 	var rules []*rule.Rule
 

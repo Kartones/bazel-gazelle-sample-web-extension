@@ -17,11 +17,14 @@
 package web
 
 import (
+	"log"
+
 	"github.com/bazelbuild/bazel-gazelle/config"
 	"github.com/bazelbuild/bazel-gazelle/label"
 	"github.com/bazelbuild/bazel-gazelle/repo"
 	"github.com/bazelbuild/bazel-gazelle/resolve"
 	"github.com/bazelbuild/bazel-gazelle/rule"
+	extensionConfig "github.com/kartones/bazel-gazelle-sample-web-extension/gazelle/config"
 )
 
 // maps resolve.Resolver -> *Web
@@ -34,10 +37,17 @@ import (
 // If nil is returned, the rule will not be indexed. If any non-nil slice is
 // returned, including an empty slice, the rule will be indexed.
 func (lang *Web) Imports(c *config.Config, r *rule.Rule, f *rule.File) []resolve.ImportSpec {
-	// webConfigs := c.Exts[languageName].(extensionConfig.WebConfigs)
-	// webConfig := webConfigs[f.Pkg]
+	webConfigs := c.Exts[languageName].(extensionConfig.WebConfigs)
+	webConfig := webConfigs[f.Pkg]
 
 	importSpecs := make([]resolve.ImportSpec, 0)
+
+	if !webConfig.ExtensionEnabled {
+		return importSpecs
+	}
+	if webConfig.Verbose {
+		log.Printf("Imports()   - '%s/%s (%s)'", f.Pkg, r.Name(), r.Kind())
+	}
 
 	// TODO: Imports similar to https://github.com/benchsci/rules_nodejs_gazelle/blob/main/gazelle/resolve.go
 
@@ -54,8 +64,15 @@ func (lang *Web) Imports(c *config.Config, r *rule.Rule, f *rule.File) []resolve
 func (lang *Web) Resolve(c *config.Config, ix *resolve.RuleIndex, rc *repo.RemoteCache, r *rule.Rule,
 	imports interface{}, from label.Label) {
 
-	// webConfigs := c.Exts[languageName].(extensionConfig.WebConfigs)
-	// webConfig := webConfigs[from.Pkg]
+	webConfigs := c.Exts[languageName].(extensionConfig.WebConfigs)
+	webConfig := webConfigs[from.Pkg]
+
+	if !webConfig.ExtensionEnabled {
+		return
+	}
+	if webConfig.Verbose {
+		log.Printf("Resolve()   - '%s/%s (%s)'", from.Pkg, r.Name(), r.Kind())
+	}
 
 	// TODO: Resolve similar to https://github.com/benchsci/rules_nodejs_gazelle/blob/main/gazelle/resolve.go
 
