@@ -3,11 +3,13 @@ load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
 go_library(
     name = "parse",
     srcs = [
+        "imports.go",
         "parse.go",
     ],
     importpath = "github.com/kartones/bazel-gazelle-sample-web-extension/gazelle/parse",
     visibility = ["//visibility:public"],
     deps = [
+        "//gazelle/config",
         "//gazelle/constants",
         "//gazelle/utils",
     ],

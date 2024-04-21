@@ -13,7 +13,6 @@ go_library(
     deps = [
         "//gazelle/constants",
         "//gazelle/file",
-        "//gazelle/parse",
         "//gazelle/utils",
         "@bazel_gazelle//rule:go_default_library",
         "@com_github_bazelbuild_buildtools//build",
