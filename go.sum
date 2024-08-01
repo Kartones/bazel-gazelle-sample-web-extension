@@ -4,6 +4,8 @@ github.com/bazelbuild/bazel-gazelle v0.36.0 h1:n41ODckCkU9D2BEwBxYN+xu5E92Vd0gaW
 github.com/bazelbuild/bazel-gazelle v0.36.0/go.mod h1:5wGHbkRpDUdz4LxREtPYwXstrWfnkV+oDmOuxNAxW1s=
 github.com/bazelbuild/bazel-gazelle v0.37.0 h1:vCNhz75HxeeLUkDMhDkNeDSJfjUROMswex+NyYLPY6A=
 github.com/bazelbuild/bazel-gazelle v0.37.0/go.mod h1:5wGHbkRpDUdz4LxREtPYwXstrWfnkV+oDmOuxNAxW1s=
+github.com/bazelbuild/bazel-gazelle v0.38.0 h1:7SABASdzy94tbvklgX8ThG+1y7ZNl2eFYRVevjOXpgw=
+github.com/bazelbuild/bazel-gazelle v0.38.0/go.mod h1:hspieDFb3FIjjhQV/dZjqq8qiVxsQ4rtRiWNZMihEXg=
 github.com/bazelbuild/buildtools v0.0.0-20240417170208-d1f67a579de1 h1:+jokqjBShU6DGzhSBbkPET94wCGHD9Bpd8VAw41oA5k=
 github.com/bazelbuild/buildtools v0.0.0-20240417170208-d1f67a579de1/go.mod h1:689QdV3hBP7Vo9dJMmzhoYIyo/9iMhEmHkJcnaPRCbo=
 github.com/census-instrumentation/opencensus-proto v0.2.1/go.mod h1:f6KPmirojxKA12rnyqOA5BBL4O983OfeGPqjHWSTneU=
