@@ -1,6 +1,6 @@
 module github.com/kartones/bazel-gazelle-sample-web-extension
 
-go 1.22.0
+go 1.22.2
 
 toolchain go1.23.3
 
