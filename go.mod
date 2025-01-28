@@ -4,7 +4,7 @@ go 1.22.9
 
 toolchain go1.23.5
 
-require github.com/bazelbuild/bazel-gazelle v0.41.0
+require github.com/bazelbuild/bazel-gazelle v0.42.0
 
 require (
 	github.com/bazelbuild/buildtools v0.0.0-20240918101019-be1c24cc9a44 // indirect
