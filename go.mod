@@ -2,7 +2,7 @@ module github.com/kartones/bazel-gazelle-sample-web-extension
 
 go 1.22.9
 
-toolchain go1.24.5
+toolchain go1.24.6
 
 require github.com/bazelbuild/bazel-gazelle v0.45.0
 
