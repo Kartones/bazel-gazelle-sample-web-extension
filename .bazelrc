@@ -2,6 +2,7 @@ common --lockfile_mode=off
 
 # Disable telemetry
 common --repo_env=DO_NOT_TRACK=1
+common --repo_env=ASPECT_TOOLS_TELEMETRY=-all
 
 test --test_output=errors
 test --verbose_failures

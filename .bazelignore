@@ -1,2 +1,7 @@
 node_modules
+bazel-bazel_gazelle-sample-web-extension
+bazel-bazel-gazelle-sample-web-extension
+bazel-bin
+bazel-out
+bazel-testlogs
 .git
