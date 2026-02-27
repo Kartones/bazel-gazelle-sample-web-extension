@@ -17,10 +17,10 @@ Intended to generate some of the rules used at my [bazel-web-template repository
 ## Run
 
 ```bash
-bazelisk run //:gazelle
+bazel run //:gazelle
 
 # apply only to a specific path:
-bazelisk run //:gazelle path/to/folder
+bazel run //:gazelle path/to/folder
 ```
 
 
@@ -29,7 +29,7 @@ bazelisk run //:gazelle path/to/folder
 ### Build
 
 ```bash
-bazelisk build //...
+bazel build //...
 ```
 
 
@@ -42,7 +42,7 @@ bazelisk build //...
 ## Testing
 
 ```bash
-bazelisk test //...
+bazel test //...
 ```
 
 
@@ -51,5 +51,5 @@ bazelisk test //...
 Apart from updating `WORKSPACE` and `MODULE.bazel`, you should run:
 
 ```bash
-bazelisk run //:update_go_deps
+bazel run //:update_go_deps
 ```
