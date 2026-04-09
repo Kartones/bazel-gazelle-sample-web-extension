@@ -21,6 +21,5 @@ go_library(
         "@bazel_gazelle//label:go_default_library",
         "@bazel_gazelle//merger:go_default_library",
         "@bazel_gazelle//rule:go_default_library",
-        "@com_github_bazelbuild_buildtools//build",
     ],
 )

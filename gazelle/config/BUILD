@@ -15,6 +15,5 @@ go_library(
         "//gazelle/file",
         "//gazelle/utils",
         "@bazel_gazelle//rule:go_default_library",
-        "@com_github_bazelbuild_buildtools//build",
     ],
 )
