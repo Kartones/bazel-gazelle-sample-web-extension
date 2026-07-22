@@ -6,7 +6,7 @@ Based on [rules_nodejs_gazelle](https://github.com/benchsci/rules_nodejs_gazelle
 Intended to generate some of the rules used at my [bazel-web-template repository](https://github.com/Kartones/bazel-web-template).
 
 
-⚠️ The extension is still WIP. It is missing some basic features, like import parsing and resolution ⚠️
+⚠️ The extension is a small example. It is missing some basic features, like import parsing and resolution. ⚠️
 
 
 ## Setup / Requirements
@@ -36,6 +36,7 @@ bazel build //...
 ### Recommendations
 
 - [Bazel plugin for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=BazelBuild.vscode-bazel)
+- [bazelisk](https://github.com/bazelbuild/bazelisk)
 - [buildifier](https://github.com/bazelbuild/buildtools)
 
 
