@@ -2,7 +2,7 @@ module github.com/kartones/bazel-gazelle-sample-web-extension
 
 go 1.26.5
 
-require github.com/bazelbuild/bazel-gazelle v0.51.3
+require github.com/bazelbuild/bazel-gazelle v0.52.2
 
 require (
 	github.com/bazel-contrib/bazel-gazelle/v2 v2.0.0-2 // indirect
